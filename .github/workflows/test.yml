@@ -40,5 +40,4 @@ jobs:
         run: |
           WAR_FILE=$(ls target/*.war | head -n 1)
           curl -u "${{ secrets.TEST_USER }}:${{ secrets.TEST_PASSWORD }}" \
-            -T "$WAR_FILE" \
-            "http://${{ secrets.TEST_HOST }}:8080/manager/text/deploy?path=/app&update=true"
+            -T "$WAR_FILE" "http://${{ secrets.TEST_HOST }}:8080/manager/text/deploy?path=/app&update=true"
