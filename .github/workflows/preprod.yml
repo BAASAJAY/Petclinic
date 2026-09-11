@@ -40,4 +40,5 @@ jobs:
         run: |
           WAR_FILE=$(ls target/*.war | head -n 1)
           curl -u "${{ secrets.PREPROD_USER }}:${{ secrets.PREPROD_PASSWORD }}" \
-            -T "$WAR_FILE" "http://${{ secrets.PREPROD_HOST }}:8080/manager/text/deploy?path=/app&update=true"
+            -T "$WAR_FILE" \
+            "http://${{ secrets.PREPROD_HOST }}:8080/manager/text/deploy?path=/app&update=true"
